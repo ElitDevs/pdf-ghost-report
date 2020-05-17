@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -32,6 +32,7 @@
   },
   "name": "pdf-ghost-report",
   "author": "Baraka Larbi",
+  "keywords": ["pdf", "node-pdf", "nodepdf", "typescript-pdf", "puppeteer", "puppeteer-pdf", "easy-report-pdf"],
   "module": "dist/pdf-ghost-report.esm.js",
   "devDependencies": {
     "@types/puppeteer": "^2.1.0",
@@ -46,5 +47,10 @@
   "dependencies": {
     "@types/fs-extra": "^9.0.0",
     "@types/node": "^14.0.1"
+  },
+  "publishConfig": {
+    "publishConfig": {
+      "registry": "https://npm.pkg.github.com/"
+    }
   }
 }
