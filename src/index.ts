@@ -23,15 +23,18 @@ export const generatePdf = async (
   const template: string = `${templateFolderPath}/${templateFileName}.${templateExtension}`;
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
-  const content = await compile(template, []);
 
-  await page.setContent(content);
+  if (templateExtension === 'hbs' || templateExtension === '.hbs') {
+    const content = await compile(template, []);
+    await page.setContent(content);
+    await page.emulateMediaType(config.emulator || 'screen');
+  } else {
+    return 'this module only support hbs compilation only for now !!';
+  }
 
-  await page.emulateMediaType(config.emulator || 'screen');
+  return 'pdf file';
 
   // const pdf = await page.pdf({
   //       config.pdfOptions
   // })
-
-  return 'pdf generator';
 };
