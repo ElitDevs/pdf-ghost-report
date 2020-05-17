@@ -5,8 +5,8 @@
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
-    "src",
-    "node_modules/@types/puppeteer/index.d.ts"
+    "src"
+
   ],
   "engines": {
     "node": ">=10"
