@@ -25,7 +25,7 @@ interface marginInterface {
   right?: string | number | undefined;
 }
 
-const compile = async (template: string, data: []) => {
+const compile = async (template: string, data: {}) => {
   const filePath = path.join(process.cwd(), template);
   const html = await fs.readFile(filePath, 'utf-8');
   return handlebars.compile(html)(data);
@@ -36,14 +36,14 @@ export const generatePdf = async (
   templateFileName: string,
   templateExtension: string,
   config: configInterface,
-  data: []
+  data: {}
 ) => {
   const template: string = `${templateFolderPath}/${templateFileName}.${templateExtension}`;
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
   let content;
   if (templateExtension === 'hbs' || templateExtension === '.hbs') {
-    content = await compile(template, []);
+    content = await compile(template, data);
   } else {
     return 'this module only support hbs compilation only for now !!';
   }
