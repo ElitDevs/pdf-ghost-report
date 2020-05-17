@@ -5,7 +5,8 @@
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
-    "src"
+    "src",
+    "node_modules/@types/puppeteer/index.d.ts"
   ],
   "engines": {
     "node": ">=10"
@@ -33,6 +34,7 @@
   "author": "Baraka Larbi",
   "module": "dist/pdf-ghost-report.esm.js",
   "devDependencies": {
+    "@types/puppeteer": "^2.1.0",
     "fs-extra": "^9.0.0",
     "handlebars": "^4.7.6",
     "husky": "^4.2.5",
@@ -42,6 +44,7 @@
     "typescript": "^3.9.2"
   },
   "dependencies": {
-    "@types/fs-extra": "^9.0.0"
+    "@types/fs-extra": "^9.0.0",
+    "@types/node": "^14.0.1"
   }
 }
