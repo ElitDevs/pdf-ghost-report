@@ -22,7 +22,7 @@ yarn add pdf-ghost-report
 
 ## Run Tests
 
-    - [ ] we need tests !!
+- [ ] we need tests !!
 
 ```bash
 npm test
