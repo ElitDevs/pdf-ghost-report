@@ -1,5 +1,5 @@
 {
-  "version": "0.2.5",
+  "version": "0.2.6",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -42,18 +42,18 @@
   ],
   "module": "dist/pdf-ghost-report.esm.js",
   "devDependencies": {
+    "@types/fs-extra": "^9.0.0",
+    "@types/node": "^14.0.1",
     "@types/puppeteer": "^2.1.0",
     "husky": "^4.2.5",
     "tsdx": "^0.13.2",
     "tslib": "^2.0.0",
-    "@types/node": "^14.0.1",
-    "@types/fs-extra": "^9.0.0",
     "typescript": "^3.9.2"
   },
   "dependencies": {
     "fs-extra": "^9.0.0",
-    "puppeteer": "^3.0.4",
-    "handlebars": "^4.7.6"
+    "handlebars": "^4.7.6",
+    "puppeteer": "^3.0.4"
   },
   "repository": {
     "type": "git",
