@@ -7,3 +7,25 @@ an open source solution for your nodejs reporting
 [![NPM](https://nodei.co/npm/pdf-ghost-report.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/pdf-ghost-report/)
 
 ## Usage
+
+## config
+
+## Installation
+
+```bash
+npm install pdf-ghost-report
+```
+
+```bash
+yarn add pdf-ghost-report
+```
+
+## Run Tests
+
+    - [ ] we need tests !!
+
+```bash
+npm test
+```
+
+#### Author: [BARAKA LARBI -laridev-]
