@@ -25,6 +25,11 @@ interface marginInterface {
   right?: string | number | undefined;
 }
 
+interface browserLaunchOptions {
+  headless?: boolean | undefined;
+  args?: any | undefined;
+}
+
 const compile = async (template: string, data: {}) => {
   const filePath = path.join(process.cwd(), template);
   const html = await fs.readFile(filePath, 'utf-8');
@@ -36,10 +41,11 @@ export const generatePdf = async (
   templateFileName: string,
   templateExtension: string,
   config: configInterface,
+  browserLaunchOptions: browserLaunchOptions,
   data: {}
 ) => {
   const template: string = `${templateFolderPath}/${templateFileName}.${templateExtension}`;
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch(browserLaunchOptions);
   const page = await browser.newPage();
   let content;
   if (templateExtension === 'hbs' || templateExtension === '.hbs') {
