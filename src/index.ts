@@ -41,11 +41,14 @@ export const generatePdf = async (
   templateFileName: string,
   templateExtension: string,
   config: configInterface,
-  browserLaunchOptions: browserLaunchOptions,
-  data: {}
+  data: {},
+  Options: browserLaunchOptions
 ) => {
   const template: string = `${templateFolderPath}/${templateFileName}.${templateExtension}`;
-  const browser = await puppeteer.launch(browserLaunchOptions);
+  const browser = await puppeteer.launch({
+    headless: Options.headless,
+    args: Options.args,
+  });
   const page = await browser.newPage();
   let content;
   if (templateExtension === 'hbs' || templateExtension === '.hbs') {
